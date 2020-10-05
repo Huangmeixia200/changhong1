@@ -1,0 +1,65 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "1306",
+      "name": "购物车空",
+      "font_class": "gouwuchekong",
+      "unicode": "f0179",
+      "unicode_decimal": 983417
+    },
+    {
+      "icon_id": "487023",
+      "name": "人",
+      "font_class": "ren",
+      "unicode": "e619",
+      "unicode_decimal": 58905
+    },
+    {
+      "icon_id": "913694",
+      "name": "购物指南",
+      "font_class": "bangzhugouwu",
+      "unicode": "e64c",
+      "unicode_decimal": 58956
+    },
+    {
+      "icon_id": "1019955",
+      "name": "信息",
+      "font_class": "mes",
+      "unicode": "e626",
+      "unicode_decimal": 58918
+    },
+    {
+      "icon_id": "5809165",
+      "name": "发票",
+      "font_class": "fapiao",
+      "unicode": "e683",
+      "unicode_decimal": 59011
+    },
+    {
+      "icon_id": "8288974",
+      "name": "地球",
+      "font_class": "diqiu",
+      "unicode": "e864",
+      "unicode_decimal": 59492
+    },
+    {
+      "icon_id": "11586023",
+      "name": "B2B_新品推荐",
+      "font_class": "tubiaozhizuomoban",
+      "unicode": "e618",
+      "unicode_decimal": 58904
+    },
+    {
+      "icon_id": "14975799",
+      "name": "天气云朵",
+      "font_class": "tianqiyunduo",
+      "unicode": "e628",
+      "unicode_decimal": 58920
+    }
+  ]
+}

@@ -1,0 +1,224 @@
+@mixin position($direction:left, $positionvalue:absolute, $value1:10px, $value2:10px) {
+    @if ($direction==left) {
+        position: $positionvalue;
+        left: $value1;
+        top: $value2;
+    }
+    @else {
+        position: $positionvalue;
+        right: $value1;
+        bottom: $value2;
+    }
+}
+@mixin borderstyle($size:1px, $style:solid, $color:black) {
+    border: $size $style $color;
+}
+$body:100%;
+$html:100%;
+
+$color:#666666;
+$warpwidth:1226px;
+$center:0 auto;
+body,html{
+    width: 100%;
+}
+.header{   
+    background: #333333;
+    width: 100%;
+    height:37px;
+    .warp{
+        color: white;
+        width:1226px;
+        margin:0 auto;
+       .toolbar-left{
+           ul{  
+               float: left;
+               list-style: none;
+             li{
+                // border:0;
+                margin: -2px;
+                width: 145px;
+                display: inline-block;
+                color: white;
+                line-height: 35px;
+                &:hover{
+                      background-color: #666666;
+            }
+        }
+     }
+       
+       }
+       .toolbar-right{
+        ul{
+            float: right;
+            list-style: none;
+          li{
+              width: 120px;
+              line-height: 35px;
+             display: inline-block;
+             &:hover{
+                   background-color:$color;
+         }
+     }
+  }
+       }
+    }
+}
+ .header a{
+    // display: block;
+    height: 35px;
+    text-align: center;  //用了文本居中但是不显示居中 浏览器有读取到
+    color: #ffffff;
+    font-size: 13px;
+    line-height: 35px;
+}
+.lo-re {
+    display: inline-block;
+    margin-right: 20px;
+    a:hover{
+     color: red;
+}
+}
+//以下是二级导航的css
+ 
+    //这里是我的长虹的定位
+ #wdch-pos{
+    position: relative;
+    .wdch{
+       z-index: 333;
+       @include position(left, absolute,0px, 37px);
+       display: none;
+       width: 200px;
+       background:white;
+       padding: 25px;
+       .wdch-top{
+           img{
+            display: block;
+            width: 70px;
+            float: left;
+            margin-right: 10px;
+           }
+           a{
+             color: blue;
+           }
+           p{
+               a{
+               font-size: 16px;
+               } 
+           }
+          span{
+             margin-left: 12px;
+           }
+      }
+
+   .wdch-bottom{
+           margin-top: 10px;
+          span,a{
+          color: #666666;
+        } 
+           a{  &:hover{
+           color: red;
+           }
+         }
+          span{
+        margin: 0 35px;
+      }
+    }
+  }
+}
+
+//虹创有品 (图片定位)
+#hcyp-pos{
+    position: relative;
+     .hcyp{
+        display: none;
+       @include position(left, absolute,0px, 37px);
+        }
+      }
+
+//购物车
+#gwc-pos{
+    position: relative;
+    .gwc{
+       @include position(left, absolute,-180px, 37px);
+       z-index: 334;
+       background-color:white;
+       width: 300px;
+       height: 50px;
+       text-align: center;
+       line-height: 50px;
+       font-size: 14px;
+       color:$color;
+       display: none;
+}
+}
+
+//以下是导航第二部分
+.hd-second{
+    width:$warpwidth;
+    height: 78px;
+    background:white;
+    margin: $center;
+    h1{
+        float: left;
+    }
+    //第二部分导航
+    .hd-second-nav{ 
+        margin-left: 30px;
+        float: left;
+   //我这里这个二级导航效果出不来
+        li{
+           float: left;
+           width: 90px;
+           line-height: 80px;
+           text-align: center;
+           position: relative;
+           .hd-second-menu{
+               a{
+                   color: black;  
+                    &:hover{
+                   color: red;
+               }
+               }
+
+           }
+       //这个盒子的宽度100%设置不出来 使用vw 左边会留白 右边会出现超出屏幕宽度的现象
+          .hd-second-sub{
+            border-top: 1px solid #e3e3e3;
+            // display: none;
+            @include position(left, absolute,0, 78px);
+            background: white;
+            width: 100%;
+            height: 300px;
+             }
+           }
+    }
+  
+    //搜索框
+    .Search-input{ //大写的s是包住一整个的  
+        position: relative;
+        background: white;
+        height: 38px;
+        width: 200px;
+        float: right;
+        overflow: hidden;
+        margin-top: 20px;
+        color: #a9a9a9;
+       @include borderstyle(1px, solid, #e3e3e3);
+        #search-input {//小写的是搜索框
+         width:165px;
+         height:36px;
+         outline: none;
+         border: none;
+         margin-left: 10px;
+         font-size: 14px;
+         color: #a9a9a9;
+        }
+        span{
+          @include position(right, absolute,15px, 7px);
+          font-size: 20px;
+          color: #777777;
+        }
+    }
+
+}

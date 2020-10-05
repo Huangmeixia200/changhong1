@@ -1,0 +1,16 @@
+@charset "utf-8"; 
+@mixin position($direction:left, $positionvalue:absolute, $value1:10px, $value2:10px) {
+    @if ($direction==left) {
+        position: $positionvalue;
+        left: $value1;
+        top: $value2;
+    }
+    @else {
+        position: $positionvalue;
+        right: $value1;
+        bottom: $value2;
+    }
+}
+@mixin borderstyle($size:1px, $style:solid, $color:black) {
+    border: $size $style $color;
+}
