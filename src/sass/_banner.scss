@@ -14,3 +14,112 @@
 @mixin borderstyle($size:1px, $style:solid, $color:black) {
     border: $size $style $color;
 }
+@mixin box-shadow($value:2px, $value:0px,$value: 5px,$value: rgba(0, 0, 0, .3)){
+    box-shadow: $value, $value ,$value, $value;
+} ;
+ // box-shadow: 2px 2px 5px rgba(0, 0, 0, .3);
+
+@mixin opacityvalue($value:0.1) {
+    opacity: $value;
+    filter: alpha(opacity=$value*100);
+}
+%cleafix {
+    //被继承的代码不会编码
+    content: '';
+    clear: both;
+    overflow: hidden;
+    display: block;
+    height: 0;
+}
+$color:#666666;
+$warpwidth:1226px;
+$center:0 auto;
+ //
+.banner{
+    max-width: -10px;
+    position: relative;
+    z-index: 1;
+    width:1902px ;
+    height: 500px;
+    overflow: hidden;
+   .banner-images{
+       img{
+        z-index: 2;
+        @include position(left, absolute, 0px, 0px);
+        @include opacityvalue(0) ;
+    }
+   } 
+    //这里是四个小按钮
+    .ban-btn{  
+         z-index: 888;
+         @include position(right, absolute, 400px, 20px);
+         a{  z-index: 455;
+             display: block;
+             height: 10px;
+             width:  10px;
+             background-color:white;    
+             float: left;  
+             margin-left: 17px;
+             border-radius: 50%;
+     }
+    }
+    //这里是二级菜单
+   .second-menu{
+           width: $warpwidth;
+           margin: $center;
+           position: relative;
+           height: 900px;
+           
+        ul{  
+            color: white;
+            background-color: black; 
+            @include  opacityvalue(0.4);
+            height: 500px;
+            @include position(left, absolute, 0px, 0px);
+            z-index: 99;
+            // margin-left: -8px;
+            li{  
+                 &:hover{
+                  background-color:red;
+                }
+                width: 226px;
+                height: 60PX;
+              a{
+               font-size: 18px;
+                // line-height: 60px;
+                margin-left: 18px;
+                color: white;
+                
+              }
+              span{
+                height: 60px;
+                line-height: 60px;
+                margin-left: 25px;
+                font-size: 30px;
+              }
+           }
+           
+        }
+        .second-menu-sub{
+            z-index: 100;
+            @include position(left,absolute, 226px, 0px);
+            width: 600px;
+            min-height: 500px;
+           @include borderstyle(1px, solid,  #f7f7f7);
+            background-color: #fff;
+            // @include  box-shadow(2px, 2px,5px, rgba(0, 0, 0, .3)); //引入这个不晓得为什么没用
+            display: none;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, .3);
+            transition: top 0.3s ease;
+            .second-menu-sub-item{
+                background-color: red;
+            }
+    }
+    }
+   
+ };
+ //这里是激活按钮的样式
+ .banner .ban-btn a.active{
+    background: red;
+}
+

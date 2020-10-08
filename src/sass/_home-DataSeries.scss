@@ -1,0 +1,294 @@
+@mixin box-shadow($value:2px, $value:0px,$value: 5px,$value:3px,$value: rgba(0, 0, 0, .3)){
+    box-shadow: $value, $value ,$value, $value, $value;
+    //水平 垂直 模糊距离  阴影尺寸 颜色 
+} ;
+ // box-shadow: 2px 2px 5px rgba(0, 0, 0, .3);
+ @mixin position($direction:left, $positionvalue:absolute, $value1:10px, $value2:10px) {
+    @if ($direction==left) {
+        position: $positionvalue;
+        left: $value1;
+        top: $value2;
+    }
+    @else {
+        position: $positionvalue;
+        right: $value1;
+        bottom: $value2;
+    }
+}
+@mixin borderstyle($size:1px, $style:solid, $color:black) {
+    border: $size $style $color;
+}
+  $color:#666666;
+  $warpwidth:1226px;
+  //这里是首页的核心数据
+.home-DataSeries{
+  padding-top: 20px;
+  width:$warpwidth;
+  margin: auto;
+  position: relative;
+  
+  #home-LeftNavigation li.active{
+      background-color: red;
+      color: white;
+  }
+ #home-LeftNavigation{
+    // @include position(left,fixed, 230px,300px);
+    position: fixed;
+    left: 0;
+    top: 0;
+    margin-left: 10%;
+    li{
+        border-top: 1px solid #d6d6d6;
+        text-align: center;
+        width: 45px;
+        height: 45px;
+        line-height: 45px;
+       a{
+             color: $color;
+       }
+    }
+    }
+
+     #home-RightNavigation{
+       @include position(right,fixed, 0px,230px);
+     li{
+         width: 40px;
+         height: 40px;
+         line-height: 40px;
+         background: $color;
+         @include opacityvalue(0.3);
+         font-size: 25px;
+         text-align: center;
+         margin-bottom: 2px;
+         a{
+            color: white;
+         }
+  }
+        
+}
+  
+  //这里是电视产品
+
+     .dscp{
+         //这里是上部分
+         .dscp-top{
+            margin-bottom: 15px;
+            height: 30px;
+            display: flex;
+            flex-direction: row;
+            justify-content:space-between;
+            .dscp-top-left{
+                p{  
+                    border-left: 4px solid #ca694e;
+                    display: inline-block;
+                    width: 105px;
+                    padding-left: 13px;
+                    font-size: 22px;
+                    color: #333333;
+                }
+                a{
+                    color:#ca694e ;
+                    font-size: 14px;
+                }
+            }
+            .dscp-top-right{
+                height: 30px;
+                line-height: 30px;
+                width: 516px;
+                display: flex;
+                flex-direction: row;
+                justify-content:space-between;
+                a{
+                    &:hover{
+                        color: red;
+                    }
+                    font-size: 14px;
+                    color: black;
+                }
+               
+            }
+
+         }
+         //这里是下部分
+        .dscp-bottom{
+           .dscp-bottom-right{
+            display: inline-block;
+               
+           }
+           .dscp-bottom-right{
+               display: inline-block;
+               width: 1000px;
+               float: right;
+               div{
+                   &:hover{
+                       box-shadow: 1px 2px 3px 1px rgba(115, 115, 115, .3);
+                   }
+                background: white;
+                
+                display: inline-block;
+                width: 190px;
+                height: 260px;
+                margin-bottom: 10px;
+                padding: 25px;
+                float: left;
+                margin-left: 10px;
+                // display: flex;
+                // flex-wrap: wrap;
+                // flex-direction: row;
+                // justify-content: space-between;
+                // height: 260px;
+       
+               }
+           }
+        }
+     }
+  
+  //这里是空调产品
+     .ktcp{
+         margin-top: 15px;
+        //这里是上部分
+        .ktcp-top{
+           margin-bottom: 15px;
+           height: 30px;
+           display: flex;
+           flex-direction: row;
+           justify-content:space-between;
+           .ktcp-top-left{
+               p{  
+                   border-left: 4px solid  #3a6de4;;
+                   display: inline-block;
+                   width: 105px;
+                   padding-left: 13px;
+                   font-size: 22px;
+                   color: #333333;
+               }
+               a{
+                   color: #3a6de4; ;
+                   font-size: 14px;
+               }
+           }
+           .ktcp-top-right{
+               height: 30px;
+               line-height: 30px;
+               width: 516px;
+               display: flex;
+               flex-direction: row;
+               justify-content:space-between;
+               a{
+                   &:hover{
+                       color: red;
+                   }
+                   font-size: 14px;
+                   color: black;
+               }
+              
+           }
+
+        }
+        //这里是下部分
+       .ktcp-bottom{
+          .ktcp-bottom-right{
+           display: inline-block;
+              
+          }
+          .ktcp-bottom-right{
+              display: inline-block;
+              width: 1000px;
+              float: right;
+              div{
+                &:hover{
+                    box-shadow: 1px 2px 3px 1px rgba(115, 115, 115, .3);
+                }
+               background: white;
+               display: inline-block;
+               width: 190px;
+               height: 260px;
+               margin-bottom: 10px;
+               padding: 25px;
+               float: left;
+               margin-left: 10px;
+               // display: flex;
+               // flex-wrap: wrap;
+               // flex-direction: row;
+               // justify-content: space-between;
+               // height: 260px;
+      
+              }
+          }
+       }
+    }
+ //这里是生活家电
+ .shjd{
+    margin-top: 15px;
+   //这里是上部分
+   .shjd-top{
+      margin-bottom: 15px;
+      height: 30px;
+      display: flex;
+      flex-direction: row;
+      justify-content:space-between;
+      .shjd-top-left{
+          p{  
+              border-left: 4px solid  #a72cbb;;
+              display: inline-block;
+              width: 105px;
+              padding-left: 13px;
+              font-size: 22px;
+              color: #333333;
+          }
+          a{
+              color: #a72cbb; 
+              font-size: 14px;
+          }
+      }
+      .shjd-top-right{
+          height: 30px;
+          line-height: 30px;
+          width: 516px;
+          display: flex;
+          flex-direction: row;
+          justify-content:space-between;
+          a{
+              &:hover{
+                  color: red;
+              }
+              font-size: 14px;
+              color: black;
+          }
+         
+      }
+
+   }
+   //这里是下部分
+  .shjd-bottom{
+     .shjd-bottom-right{
+      display: inline-block;
+         
+     }
+     .shjd-bottom-right{
+         display: inline-block;
+         width: 1000px;
+         float: right;
+         div{
+            &:hover{
+                box-shadow: 1px 2px 3px 1px rgba(115, 115, 115, .3);
+            }
+          background: white;
+          display: inline-block;
+          width: 190px;
+          height: 260px;
+          margin-bottom: 10px;
+          padding: 25px;
+          float: left;
+          margin-left: 10px;
+          // display: flex;
+          // flex-wrap: wrap;
+          // flex-direction: row;
+          // justify-content: space-between;
+          // height: 260px;
+ 
+         }
+     }
+  }
+}
+    }

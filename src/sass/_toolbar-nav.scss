@@ -154,13 +154,18 @@ body,html{
 }
 
 //以下是导航第二部分
-.hd-second{
-    width:$warpwidth;
-    height: 78px;
+.hd-Second{
+    height: 81px;
     background:white;
+    .hd-Second-wrap{
+    width:$warpwidth;
     margin: $center;
     h1{
+        height: 81px;
         float: left;
+        img{
+            height: 81px;
+        }
     }
     //第二部分导航
     .hd-second-nav{ 
@@ -173,6 +178,8 @@ body,html{
            line-height: 80px;
            text-align: center;
            position: relative;
+           font-size: 16px;
+         
            .hd-second-menu{
                a{
                    color: black;  
@@ -184,12 +191,25 @@ body,html{
            }
        //这个盒子的宽度100%设置不出来 使用vw 左边会留白 右边会出现超出屏幕宽度的现象
           .hd-second-sub{
+            z-index: 335;
             border-top: 1px solid #e3e3e3;
-            // display: none;
+            display: none;
             @include position(left, absolute,0, 78px);
             background: white;
-            width: 100%;
-            height: 300px;
+            // width: 100%;
+            height: 229px;
+            //可以用以下俩行硬搞上去 但是语法不对
+            width: 1464px;
+            margin-left: -700px;
+            .hd-second-sub-wrap{
+               .hd-second-sub-title{
+                line-height: 229px;
+                height: 229px;
+                // padding-left: 45px;
+                // margin-left: 32px;
+                float: left;
+               }
+            }
              }
            }
     }
@@ -219,6 +239,28 @@ body,html{
           font-size: 20px;
           color: #777777;
         }
+     
     }
 
 }
+}
+   //不知道为什么这里写的样式没用 所以我把本来包在搜索框里的给单独写一个盒子出来1
+   .search-input-sub{
+            display: none;
+            width: 202px;
+            height: 150px;
+            background:white; 
+            position: absolute;
+            right: 347px; top:97px;
+    p{
+         height: 30px;
+         line-height: 30px;
+         margin: 5px;
+         a{
+             color: #a9a9a9;
+             font-size: 14px;
+         }
+
+    } 
+  
+  }
